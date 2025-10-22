@@ -1,0 +1,53 @@
+/** 
+       Folha de estilo do site 
+       @author Hellen Rodrigues
+       @link
+
+/* Layout *****************************************
+
+/* Variaveis */
+
+:root {
+       --AzulClaro: #aac3d6;
+       --Preto: #000000;
+       --Branco: #ffffff;
+
+}
+
+/* CSS Reset */
+
+* {
+       margin: 0;
+       padding: 0;
+       box-sizing: bonder-box;
+
+}
+
+body {
+       font-family: "Arial", Calibri;
+}
+
+/* fim do layout **************************
+
+
+ /* Smarthphone landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+@media (min-width:576px) {}
+
+/* Smarthphone portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+@media (min-width:576px) {}
+
+/* Tablet landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width:992px) {}
+
+/* Tablet portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+@media (min-width:768px) {}
+
+/* Notebook / PC - HD >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width:1200px) {}
+
+/* Notebook / PC / TV - Full HD ou 4K >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+@media (min-width:1400px) {}
