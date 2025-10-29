@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -20,22 +20,35 @@
 <body>
     <!--- cabecçalho -->
     <header>
-        <!--logo-->
-        <div class="logo">
-            <img src="./img/icone.png" alt="Atlas Ocupacional">
+        <!---classe usada no layout para definir max width-->
+        <div class="container">>
+            <!--logo-->
+            <div class="logo">
+                <img src="./img/icone.png" alt="Atlas Ocupacional">
+            </div>
+            <!--Menu-->
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check">&#x268c;</label>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Conteúdo</a></li>
+                    <li><a href="#">Saiba +</a></li>
+                </ul>
         </div>
-        <!--Menu-->
-        <nav>
-            <input type="checkbox" id="check">
-            <label for="check">&#x268c;</label>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Contato</a></li>
-                <li><a href="#">Inicio</a></li>
-            </ul>
+
         </nav>
     </header>
+    <!--principal-->
+    <main>
+        <div class="container">
+            <h1>Atlas Ocupacional</h1>
+            <h2>Saúde Para sua empresa</h2>
+            <a href="https://youtu.be/IPTdVopEElU?si=sG2uJ_jjFjkUctiW" 
+            target="_blank" rel="noopener noreferrer" class="btn">Saiba +</a>              <!--abrir video em outra aba-->
+        </div>
+    </main>
 </body>
 
 </html>

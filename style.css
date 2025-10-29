@@ -8,46 +8,250 @@
 /* Variaveis */
 
 :root {
-       --AzulClaro: #aac3d6;
-       --Preto: #000000;
-       --Branco: #ffffff;
+    --AzulClaro: #aac3d6;
+    --Preto: #000000;
+    --Branco: #ffffff;
+    --Azul: #8eafc8;
+    --icone: #547dbf;
 
 }
 
 /* CSS Reset */
 
 * {
-       margin: 0;
-       padding: 0;
-       box-sizing: bonder-box;
-
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
-       font-family: "Arial", Calibri;
+    font-family: Arial;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    /**/
+}
+/*botao*/
+.btn {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color:var(--Azul);
+    padding: 10px 40px;
+    color: var(--Branco);
+    border-radius: 25px;
+    border: 2px solid var(--icone);
 }
 
 /* fim do layout **************************
 
 
- /* Smarthphone landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-
-@media (min-width:576px) {}
-
+ 
 /* Smarthphone portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/*cabeçalho*/
 
-@media (min-width:576px) {}
+header {
+    height: 100px;
+    background-color: var(--Azul);
+}
 
-/* Tablet landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-@media (min-width:992px) {}
+.logo img {
+    width: 160px;
+    height: 108px;
+}
 
+#check {
+    display: none;
+}
+
+label {
+    font-size: 3rem;
+    color: rgba(3, 42, 150, 0.863);
+    position: fixed;
+    top: 9px;
+    right: 15px;
+}
+
+nav ul {
+    list-style: none;
+    height: 100vh;
+    position: fixed;
+    top: 100px;
+    background-color: rgba(145, 168, 190, 0.863);
+    width: 65%;
+    right: -65%;
+    /*ajustar com width*/
+    transition: all 0.5s;
+}
+
+/*ação para a caixa checkbox*/
+/* quando selecionada mudar ul*/
+#check:checked~ul {
+    right: 0px;
+
+}
+
+nav ul li {
+    padding: 20px;
+    border-bottom: 1px solid var(--Branco);
+    text-align: right;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--Branco)
+}
+
+/*principal portrait*/
+main {
+    height: 50vh;
+    background: url(img/banner.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+main .container{
+    height: 100%; /*relativo ao main*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main h1{
+    color: #000000;
+    font-family: "Arial";
+    font-size: 2rem;
+    text-shadow: 0px 5px 10px var(--Azul),0px 10px 10px rgba(0, 0, 0, 0.15),
+    0px 15px 15px rgba(0, 0, 0, 0.1),
+    0px 20px 20px rgba(0, 0, 0, 0.1);
+    
+}
+
+main h2{
+    color: var(--Preto);
+    font-size: 1.85rem;
+    font-weight: 500;
+    font-family: "Arial";
+    text-shadow: 0px 5px 10px var(--preto),0px 10px 10px rgba(0, 0, 0, 0.15),
+    0px 15px 15px rgba(0, 0, 0, 0.1),
+    0px 20px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+
+}
+
+/* fim -----------------------------------
+/* Smarthphone landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width:576px) {
+
+    /*Layout*/
+    .container {
+        max-width: 540px;
+    }
+
+    /*Cabeçalho*/
+    nav ul {
+        width: 40%;
+        right: -40%;
+
+    }
+/*Principal*/
+main {
+    height: 65vh;
+}
+ main h1{
+    font-size: 2.5rem;
+ }
+ main h2 {
+    font-size: 2.5rem;
+ }
+}
+
+/*-----------------------------------------------*/
 /* Tablet portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
-@media (min-width:768px) {}
+@media (min-width:768px) {
 
+    /*layout*/
+    .container {
+        max-width: 720px;
+    }
+    /*Principal*/
+main {
+    height: 75vh;
+}
+ main h1{
+    font-size: 4rem;
+ }
+ main h2 {
+    font-size: 3rem;
+ }
+}
+
+/*--------------------------------------------------*/
+/* Tablet landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width:992px) {
+
+    /*layout*/
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* fim -----------------------------------
 /* Notebook / PC - HD >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-@media (min-width:1200px) {}
+@media (min-width:1200px) {
 
+    /*layout*/
+    .container {
+        justify-content: space-between;
+        max-width: 1320px;
+    }
+}
+
+/*Cabeçalho*/
+
+/* fim -----------------------------------
 /* Notebook / PC / TV - Full HD ou 4K >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
-@media (min-width:1400px) {}
+@media (min-width:1400px) {
+    .container {
+        justify-content: space-between
+    }
+
+    header {
+        height: 100px;
+    }
+
+    .logo img {
+        width: 194px;
+        height: 128px;
+    }
+
+    label {
+        display: none;
+    }
+
+    nav ul {
+        /* desafixar um elemento que foi fixado (padrão)*/
+        position: static;
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+        margin-top: 20px
+    }
+
+    nav ul li {
+        float: left;
+        border: 0;
+    }
+    /*principal*/
+    main h1 {
+        font-size: 5rem;
+    }
+    
+    nav ul li a:hover {
+        color: var(--AzulClaro);
+    }
+}
