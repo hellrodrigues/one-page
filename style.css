@@ -22,9 +22,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial; 
 }
-
 /* Layout padrão */
 .container {
     display: flex;
@@ -46,7 +45,7 @@ html {
     padding: 10px 40px;
     color: var(--Branco);
     border-radius: 25px;
-    border: 2px solid var(--icone);
+    border: 2px solid var(--AzulClaro);
 }
 
 .btn:hover {
@@ -166,7 +165,6 @@ nav ul li a {
     text-decoration: none;
     padding: 14px 36px;
     border-radius: 25px;
-    transition: 0.3s, transform 0.2s;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -176,7 +174,6 @@ nav ul li a {
 }
 
 .btn-mobile,
-.btn-tablet,
 .btn-desktop {
     display: none;
 }
@@ -537,22 +534,39 @@ section {
 }
 
 /* RODAPÉ */
-footer {
-    background-color: #111;
-    color: #fff;
-    text-align: center;
-    padding: 40px 20px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    gap: 30px;
 }
 
-footer p {
-    margin-top: 10px;
-    font-size: 0.9rem;
+.esquerda_footer{
+    margin: 0 auto;
 }
 
+.esquerda_footer a{
+    text-decoration: none;
+    color: aliceblue;
+}
 
+.esquerda_footer i{
+    text-decoration: none;
+    color: rgba(255,255,255,0.5);
+}
+
+.direita_footer{
+    margin: 0 auto;
+
+} 
+
+.direita_footer img{
+    margin: 0 10px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
 
 /* 🔄 RESPONSIVIDADE */
 @media (max-width: 992px) {
@@ -588,22 +602,31 @@ footer p {
     }
 }
 
-@media (max-width: 576px) {
-    .logo img {
-        width: 120px;
+@media (min-width: 576px) {
+
+    /* Cabeçario */
+    .container {
+        max-width: 560px;
+    }
+.mapa{
+        display: flex;
     }
 
-    .btn {
-        padding: 10px 30px;
-        font-size: 1rem;
+    .mapa iframe{
+        height: 250px;
     }
 
-    main h1 {
-        font-size: 1.8rem;
+    footer{
+        flex-direction: row;
+        justify-content: center;
+        height: 150px;
     }
 
-    main h2 {
-        font-size: 1.2rem;
+    .esquerda_footer{
+        margin: auto;
+    }
+
+    .direita_footer{
+        margin: auto;
     }
 }
-
