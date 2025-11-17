@@ -1,57 +1,89 @@
-/** 
-       Folha de estilo do site 
+/**
+       Folha de estilo do site Atlas ocupacional
        @author Hellen Rodrigues
-       @link
+       @link https://github.com/hellrodrigues/one-page
 
 /* Layout *****************************************
 
-/* Variaveis */
-
+/* Variáveis */
 :root {
     --AzulClaro: #aac3d6;
     --Preto: #000000;
     --Branco: #ffffff;
     --Azul: #8eafc8;
     --icone: #547dbf;
-
 }
 
-/* CSS Reset */
-
+/* Reset */
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
 }
 
+/* Layout padrão */
 .container {
     display: flex;
+    flex-direction: column;
     margin: 0 auto;
-    /**/
+    width: 100%;
 }
-/*botao*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Botão */
 .btn {
     text-decoration: none;
     font-size: 1.3rem;
     font-weight: 600;
-    background-color:var(--Azul);
+    background-color: var(--Azul);
     padding: 10px 40px;
     color: var(--Branco);
     border-radius: 25px;
     border: 2px solid var(--icone);
 }
 
-/* fim do layout **************************
+.btn:hover {
+    background: var(--icone);
+    transition: 0.3s;
+}
 
+/* CARTÕES */
+.card {
+    width: 337px;
+    height: auto;
+    background-color: #547dbf;
+    margin-top: 25px;
+    border: 1px solid var(--Azul);
+    border-radius: 25px;
+    padding-bottom: 20px;
+}
 
- 
-/* Smarthphone portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-/*cabeçalho*/
+.card img {
+    width: 100%;
+    border-radius: 25px 25px 0 0;
+}
 
+.card h2 {
+    font-size: 1.3rem;
+    margin: 15px;
+    color: white;
+}
+
+.card p {
+    color: white;
+    padding: 0 10px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* CABEÇALHO */
 header {
     height: 100px;
     background-color: var(--Azul);
@@ -59,7 +91,7 @@ header {
 
 .logo img {
     width: 160px;
-    height: 108px;
+    height: auto;
 }
 
 #check {
@@ -68,10 +100,11 @@ header {
 
 label {
     font-size: 3rem;
-    color: rgba(3, 42, 150, 0.863);
+    color: var(--icone);
     position: fixed;
     top: 9px;
     right: 15px;
+    cursor: pointer;
 }
 
 nav ul {
@@ -79,18 +112,14 @@ nav ul {
     height: 100vh;
     position: fixed;
     top: 100px;
-    background-color: rgba(145, 168, 190, 0.863);
     width: 65%;
     right: -65%;
-    /*ajustar com width*/
-    transition: all 0.5s;
+    background-color: rgba(145, 168, 190, 0.95);
+    transition: 0.5s;
 }
 
-/*ação para a caixa checkbox*/
-/* quando selecionada mudar ul*/
 #check:checked~ul {
-    right: 0px;
-
+    right: 0;
 }
 
 nav ul li {
@@ -101,157 +130,480 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: var(--Branco)
+    color: var(--Branco);
+    font-size: 1.2rem;
 }
 
-/*principal portrait*/
+#wireframe {
+    color: rgb(7, 7, 7);
+    text-align: center;
+    background-image: url('./img/bannerfundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+
+#wireframe h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+#wireframe p {
+    max-width: 600px;
+    margin: 0 auto 25px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Botão PDF */
+.btn-pdf {
+    display: inline-block;
+    background-color: var(--icone);
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 36px;
+    border-radius: 25px;
+    transition: 0.3s, transform 0.2s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-pdf:hover {
+    background-color: var(--Azul);
+    transform: scale(1.05);
+}
+
+.btn-mobile,
+.btn-tablet,
+.btn-desktop {
+    display: none;
+}
+
+/* PRINCIPAL */
 main {
     height: 50vh;
-    background: url(img/banner.jpg);
+    background: url(./img/banner.jpg);
     background-size: cover;
     background-position: center;
 }
 
-main .container{
-    height: 100%; /*relativo ao main*/
+main .container {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+main h1 {
+    color: var(--Preto);
+    font-size: 2rem;
+    text-shadow: 0 4px 8px var(--AzulClaro);
+}
+
+main h2 {
+    margin-top: 10px;
+    color: var(--Preto);
+    font-size: 1.8rem;
+    text-shadow: 0 4px 8px var(--AzulClaro);
+}
+
+/* DESTAQUE */
+#destaque {
+    padding: 30px 10px;
+    background: url(./img/bannerfundo.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+}
+
+#hero img {
+    width: 120px;
+}
+
+.topic {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.topic img {
+    width: 30px;
+    height: 30px;
+}
+
+.topic p {
+    margin-left: 15px;
+}
+
+/* SOBRE */
+#Sobre {
+    padding: 50px 10px;
+    background: linear-gradient(to right, #6eaaff, #6ea6ff);
+}
+
+.sobre-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.sobre-text p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+#sobre-video iframe {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/* RESPONSIVIDADE */
+/* 🔄 RESPONSIVIDADE */
+@media (max-width: 992px) {
+    main h1 {
+        font-size: 2.5rem;
+    }
+
+    main h2 {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    main h1 {
+        font-size: 2rem;
+    }
+
+    main h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo img {
+        width: 120px;
+    }
+
+    .btn {
+        padding: 10px 30px;
+        font-size: 1rem;
+    }
+
+    main h1 {
+        font-size: 1.8rem;
+    }
+
+    main h2 {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* ===== Rodapé ===== */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px 10px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+footer .info-contato {
+    margin-bottom: 25px;
+}
+
+footer .info-contato p {
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+footer .info-contato img {
+    width: 22px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+footer .aviso {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+footer .redes-sociais {
+    margin: 25px 0 10px;
+}
+
+footer .redes-sociais a img {
+    width: 38px;
+    height: 38px;
+    margin: 0 6px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+footer .redes-sociais a img:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
+footer .creditos {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #111;
+    /* fundo padrão do rodapé no computador */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+
+
+/* VARIÁVEIS */
+:root {
+    --AzulClaro: #aac3d6;
+    --Preto: #000000;
+    --Branco: #ffffff;
+    --Azul: #8eafc8;
+    --icone: #547dbf;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--Preto);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+
+
+/* CONTAINER BASE */
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* CABEÇALHO */
+header {
+    background-color: var(--Azul);
+    height: auto;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 140px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: var(--Branco);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: var(--AzulClaro);
+}
+
+/* PRINCIPAL */
+main {
+    height: auto;
+    min-height: 80vh;
+    background: url('./img/banner.jpg') center/cover no-repeat;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
-main h1{
-    color: #000000;
-    font-family: "Arial";
-    font-size: 2rem;
-    text-shadow: 0px 5px 10px var(--Azul),0px 10px 10px rgba(0, 0, 0, 0.15),
-    0px 15px 15px rgba(0, 0, 0, 0.1),
-    0px 20px 20px rgba(0, 0, 0, 0.1);
-    
-}
-
-main h2{
-    color: var(--Preto);
-    font-size: 1.85rem;
-    font-weight: 500;
-    font-family: "Arial";
-    text-shadow: 0px 5px 10px var(--preto),0px 10px 10px rgba(0, 0, 0, 0.15),
-    0px 15px 15px rgba(0, 0, 0, 0.1),
-    0px 20px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-
-}
-
-/* fim -----------------------------------
-/* Smarthphone landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-@media (min-width:576px) {
-
-    /*Layout*/
-    .container {
-        max-width: 540px;
-    }
-
-    /*Cabeçalho*/
-    nav ul {
-        width: 40%;
-        right: -40%;
-
-    }
-/*Principal*/
-main {
-    height: 65vh;
-}
- main h1{
-    font-size: 2.5rem;
- }
- main h2 {
-    font-size: 2.5rem;
- }
-}
-
-/*-----------------------------------------------*/
-/* Tablet portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-
-@media (min-width:768px) {
-
-    /*layout*/
-    .container {
-        max-width: 720px;
-    }
-    /*Principal*/
-main {
-    height: 75vh;
-}
- main h1{
-    font-size: 4rem;
- }
- main h2 {
+main h1 {
     font-size: 3rem;
- }
+    color: var(--Preto);
+    margin-bottom: 15px;
 }
 
-/*--------------------------------------------------*/
-/* Tablet landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-@media (min-width:992px) {
+main h2 {
+    font-size: 2rem;
+    color: var(--Preto);
+    margin-bottom: 30px;
+}
 
-    /*layout*/
-    .container {
-        max-width: 960px;
+.btn {
+    text-decoration: none;
+    font-size: 1.2rem;
+    background-color: var(--Azul);
+    padding: 12px 40px;
+    color: var(--Branco);
+    border-radius: 25px;
+    border: 2px solid var(--icone);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--icone);
+}
+
+/* SEÇÕES */
+section {
+    width: 100%;
+    padding: 60px 0;
+}
+
+/* DESTAQUE */
+#destaque {
+    background: url('./img/bannerfundo.png') center/cover no-repeat;
+    text-align: center;
+}
+
+/* SOBRE */
+#Sobre {
+    background: linear-gradient(to right, #6eaaff, #6ea6ff);
+}
+
+.sobre-text {
+    flex: 1;
+}
+
+#sobre-video iframe {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+/* CARDS */
+.card {
+    width: 320px;
+    background-color: var(--icone);
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 20px auto;
+    overflow: hidden;
+    color: var(--Branco);
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card h2 {
+    margin: 15px 0;
+}
+
+.card p {
+    padding: 0 15px 20px;
+}
+
+/* RODAPÉ */
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+
+
+/* 🔄 RESPONSIVIDADE */
+@media (max-width: 992px) {
+    main h1 {
+        font-size: 2.5rem;
+    }
+
+    main h2 {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        width: 280px;
     }
 }
 
-/* fim -----------------------------------
-/* Notebook / PC - HD >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-@media (min-width:1200px) {
-
-    /*layout*/
+@media (max-width: 768px) {
     .container {
-        justify-content: space-between;
-        max-width: 1320px;
-    }
-}
-
-/*Cabeçalho*/
-
-/* fim -----------------------------------
-/* Notebook / PC / TV - Full HD ou 4K >>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-
-@media (min-width:1400px) {
-    .container {
-        justify-content: space-between
-    }
-
-    header {
-        height: 100px;
-    }
-
-    .logo img {
-        width: 194px;
-        height: 128px;
-    }
-
-    label {
-        display: none;
+        flex-direction: column;
+        align-items: center;
     }
 
     nav ul {
-        /* desafixar um elemento que foi fixado (padrão)*/
-        position: static;
-        width: 100%;
-        height: auto;
-        background-color: transparent;
-        margin-top: 20px
+        flex-direction: column;
     }
 
-    nav ul li {
-        float: left;
-        border: 0;
-    }
-    /*principal*/
     main h1 {
-        font-size: 5rem;
+        font-size: 2rem;
     }
-    
-    nav ul li a:hover {
-        color: var(--AzulClaro);
+
+    main h2 {
+        font-size: 1.4rem;
     }
 }
+
+@media (max-width: 576px) {
+    .logo img {
+        width: 120px;
+    }
+
+    .btn {
+        padding: 10px 30px;
+        font-size: 1rem;
+    }
+
+    main h1 {
+        font-size: 1.8rem;
+    }
+
+    main h2 {
+        font-size: 1.2rem;
+    }
+}
+
